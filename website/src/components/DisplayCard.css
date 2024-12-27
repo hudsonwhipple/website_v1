@@ -1,0 +1,7 @@
+.display-card {
+    transition: transform 0.3s ease;
+}
+
+.display-card:hover {
+    transform: scale(1.05);
+}

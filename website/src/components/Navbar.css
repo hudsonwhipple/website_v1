@@ -2,7 +2,7 @@
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
-    background-color: #333;
+    background-color: #000B0F;
     padding: 10px;
 }
 
@@ -16,12 +16,14 @@
     font-weight: bold;
     font-family: 'Arial', sans-serif;
     letter-spacing: 1px;
+    margin: 10px;
 
 }
 
 .navbar-menu {
     display: flex;
     list-style: none;
+    margin: 10px;
 }
 
 .navbar-menu li a {

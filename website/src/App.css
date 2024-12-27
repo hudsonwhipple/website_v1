@@ -60,15 +60,52 @@ body {
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
+.contacts {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: var(--mantine-radius-lg);
+  background-size: cover;
+  background-position: center;
+  background-color: #5ab1bb;
+  border: 1px solid transparent;
+  padding: var(--mantine-spacing-xl);
+  flex: 0 0 280px;
+  height: 25rem;
+
+  @media (max-width: var(--mantine-breakpoint-sm)) {
+    margin-bottom: var(--mantine-spacing-sm);
+    padding-left: var(--mantine-spacing-md);
+  }
+}
+
+.contactTitle {
+  margin-bottom: calc(var(--mantine-spacing-xl) * 1.5);
+  font-size: 3rem;
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+
+  @media (max-width: var(--mantine-breakpoint-sm)) {
+    margin-bottom: var(--mantine-spacing-xl);
+  }
+}
+
+.section-header .highlight{
+  position: relative;
+  background-color: rgba(41, 203, 221, 0.25);
+  border-radius: 5%;
+  padding: 4px 10px;
+}
+
 .section-header{
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: var(--mantine-color-white);
   font-family:
     Greycliff CF,
     var(--mantine-font-family);
   font-size: 104px;
   line-height: 1.2;
   font-weight: 900;
-  padding: 50px;
+  padding: 40px;
 
   @media (max-width: var(--mantine-breakpoint-xs)) {
     font-size: 28px;
@@ -77,9 +114,9 @@ body {
 
 .section-body{
   font-size: 1.5rem;
-  font-family: 'Arial', sans-serif;
+  font-family: Greycliff CF, var(--mantine-font-family);
   margin: 20px 0;
-  padding: 40px;
+  padding: 20px;
 }
 
 .profile-image:hover{

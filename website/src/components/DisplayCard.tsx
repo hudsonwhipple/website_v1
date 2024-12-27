@@ -7,9 +7,11 @@ import "./DisplayCard.css";
 interface DisplayCardProps {
     title: string;
     description: string;
+    img: string;
+    link: string;
 }
 
-const DisplayCard: React.FC<DisplayCardProps> = ({ title, description }) => {
+const DisplayCard: React.FC<DisplayCardProps> = ({ title, description, img, link }) => {
 
     return (
         // <Card bg="dark" text="white">
@@ -28,14 +30,23 @@ const DisplayCard: React.FC<DisplayCardProps> = ({ title, description }) => {
         //     <p>{description}</p>
         // </div>
 
-        <Card bg="dark" text="white" style={{ width: '18rem', margin:"10px auto" }}>
-            <Card.Img variant="top" src="logo192.png" />
+        <Card 
+            // bg="dark" 
+            className="display-card"
+            text="white" 
+            style={{ 
+                width: '18rem', 
+                margin:"10px auto",
+                backgroundColor: 'rgba(42, 42, 42, 0.25)',
+                border: '1px solid rgba(99, 99, 99, 0.25)',
+                }}>
+            <Card.Img variant="top" src={img} />
             <Card.Body>
             <Card.Title>{title}</Card.Title>
-            <Card.Text>
+            <Card.Text style={{fontSize: '0.5em'}}>
                 {description}
             </Card.Text>
-            <Button variant="primary">See project</Button>
+            <Button variant="primary" href={link} >See project</Button>
             </Card.Body>
         </Card>
     );
