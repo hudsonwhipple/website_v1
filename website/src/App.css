@@ -90,6 +90,11 @@ body {
   }
 }
 
+.descriptor {
+  margin: 0 7rem;
+  text-align: left;
+}
+
 .section-header .highlight{
   position: relative;
   background-color: rgba(41, 203, 221, 0.25);

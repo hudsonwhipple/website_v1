@@ -37,10 +37,10 @@ const App: React.FC = () => {
                 </ThemeIcon>
               }
             >
-              <List.Item>
+              <List.Item className="descriptor">
                 <b>Programming Languages:</b> – Java, C, Python, JavaScript, Dart, Objective-C, SQL
               </List.Item>
-              <List.Item>
+              <List.Item className="descriptor">
                 <b>Worked With: </b> – React, Vue, Flutter, Flask, PostgreSQL, GCP, Docker, PyTorch, TensorFlow
               </List.Item>
             </List>
@@ -52,10 +52,15 @@ const App: React.FC = () => {
                 </div>
               </div>
               <p className="section-body">
-I am a third-year Computer Science student at the University of Texas at Austin, complementing my major with a certificate in Applied Statistical Modeling and a minor in Statistics and Data Sciences. My primary areas of interest lie at the intersection of machine learning, data science, and software engineering.
+I am a third-year Computer Science student at the University of Texas at Austin, complementing my major with a certificate in Applied Statistical Modeling and a minor in Statistics and Data Sciences. 
+My primary areas of interest lie at the intersection of machine learning, data science, and software engineering.
               </p>
               <p className="section-body"> 
-              Beyond academics, I contribute to GMango, an innovative tech company combining AI with dental technology to revolutionize oral healthcare. As a key developer, I’ve focused on building the company’s mobile app, including features such as user profiles, settings, and marketplace. Additionally, I’m involved in an university initiative aimed at analyzing the Curricular Analytics of 40 prominent degree programs. This project seeks to identify administrative barriers to student success by developing a data-driven platform to visualize and interpret trends, shaping the future of academic curriculum at UT Austin.
+              Beyond academics, I contribute to GMango, an innovative tech company combining AI with dental technology to revolutionize oral healthcare. 
+              As a key developer, I’ve focused on building the company’s mobile app, including features such as user profiles, settings, and marketplace. 
+              Additionally, I’m involved in an university initiative aimed at analyzing the Curricular Analytics of 40 prominent degree programs. 
+              This project seeks to identify administrative barriers to student success by developing a data-driven platform to visualize and interpret trends, 
+              shaping the future of academic curriculum at UT Austin.
               </p>
             </section>
             <section id="projects">
