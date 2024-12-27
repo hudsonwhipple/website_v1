@@ -115,7 +115,7 @@ body {
 .section-body{
   font-size: 1.5rem;
   font-family: Greycliff CF, var(--mantine-font-family);
-  margin: 20px 0;
+  margin: 1rem 8rem;
   padding: 20px;
 }
 
