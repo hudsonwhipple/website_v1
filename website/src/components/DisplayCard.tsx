@@ -9,9 +9,10 @@ interface DisplayCardProps {
     description: string;
     img: string;
     link: string;
+    available: string;
 }
 
-const DisplayCard: React.FC<DisplayCardProps> = ({ title, description, img, link }) => {
+const DisplayCard: React.FC<DisplayCardProps> = ({ title, description, img, link, available }) => {
 
     return (
         // <Card bg="dark" text="white">
@@ -46,7 +47,7 @@ const DisplayCard: React.FC<DisplayCardProps> = ({ title, description, img, link
             <Card.Text style={{fontSize: '0.5em'}}>
                 {description}
             </Card.Text>
-            <Button variant="primary" href={link} >See project</Button>
+            <Button variant={available} href={link} >See project</Button>
             </Card.Body>
         </Card>
     );

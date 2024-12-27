@@ -14,7 +14,7 @@ const mockdata = [
   {
     title: 'Data Analyst/SWE at Curricular Analytics',
     description:
-      'Performed data analysis on the student curriculum plans at UT Austin to highlight complexity and other factors detering student graduation. Developing the data anayltics platform for the emerging program at UT Austin',
+      'Performed data analysis on the student curriculum plans at UT Austin to highlight complexity and other factors detering student graduation. Developing the data anayltics platform for this emerging program at UT Austin',
     image: 'UT_Austin.png',
   },
   {
@@ -26,7 +26,7 @@ const mockdata = [
   {
     title: 'SWE at Code Assist',
     description:
-      'In this UT research project, I developed the unittests for an ai auto-grading platform complete with multithreading tests and implemented api endpoints in the backend for user management in the PostgreSQL database',
+      'In this UT research project, I developed the unittests for an AI auto-grading application complete with multithreading tests and implemented api endpoints in the backend for user management in the PostgreSQL database',
     image: 'UT_Austin.png',
   },
 ];

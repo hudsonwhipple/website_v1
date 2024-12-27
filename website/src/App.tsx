@@ -38,10 +38,10 @@ const App: React.FC = () => {
               }
             >
               <List.Item>
-                <b>Programming Languages:</b> – Java, C, Python, JavaScript, Objective-C, Dart, SQL
+                <b>Programming Languages:</b> – Java, C, Python, JavaScript, Dart, Objective-C, SQL
               </List.Item>
               <List.Item>
-                <b>Technologies: </b> – ReactJS, Vue.js, Flask, PostgreSQL, GCP, Docker, PyTorch, TensorFlow
+                <b>Worked With: </b> – React, Vue, Flutter, Flask, PostgreSQL, GCP, Docker, PyTorch, TensorFlow
               </List.Item>
             </List>
                 </div>
@@ -60,32 +60,33 @@ I am a third-year Computer Science student at the University of Texas at Austin,
             </section>
             <section id="projects">
               <h1 className="section-header">Projects</h1>
+              <p className="section-body"> Some projects completed are not publically available but please reach out to me to learn more about them!</p>
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-md-4 mb-4">
                     <DisplayCard img="Google_Co_Lab.png" title="Climate Data Warehouse" description="Developed in 
                     GCP and dbt a data warehouse to take several climate datasets through transformation layers to 
-                    analyze effects of policy on the environment and more" link=""/>
+                    analyze effects of policy on the environment and more" link="" available="secondary"/>
                   </div>
                   <div className="col-md-4 mb-4">
                     <DisplayCard img="SMOTE.png" title="Grocery Item Predictor" description="Feature Engieered 
-                    and used Machine Learning to create a method of recommending products to likely customers" link=""/>
+                    and used Machine Learning to create a method of recommending products to likely customers" link="" available="secondary"/>
                   </div>
                   <div className="col-md-4 mb-4">
                     <DisplayCard img="website_personal.png" title="Personal Website" description="This frontend website 
-                    was created through React, open-source libraries, and type script." link="https://github.com/hudsonwhipple/website_v1"/>
+                    was created through React, open-source libraries, and type script." link="https://github.com/hudsonwhipple/website_v1" available="primary"/>
                   </div>
                   <div className="col-md-4 mb-4">
                     <DisplayCard img="concert.jpg" title="Cheap Cheap Tickets" description="Implemented a 
-                    fullstack website in React, Flask, PostgreSQL, and with REST api" link="https://github.com/hudsonwhipple/fullstackweb"/>
+                    fullstack website in React, Flask, PostgreSQL, and with REST API" link="https://github.com/hudsonwhipple/fullstackweb" available="primary"/>
                   </div>
                   <div className="col-md-4 mb-4">
                     <DisplayCard img="operatingsystem.jpg" title="PintOS" description="Built an operating system 
-                    with priority scheduling and synchronization." link=""/>
+                    with priority donation, page replacement algorithms, and synchronization." link="" available="secondary"/>
                   </div>
                   <div className="col-md-4 mb-4">
                     <DisplayCard img="computerchip.jpg" title="System Emulator" description="Developed the 
-                    software for a cpu under the PIPE- optimization" link=""/>
+                    software for a processor under the PIPE- optimization" link="" available="secondary"/>
                   </div>
                 </div>
               </div>
