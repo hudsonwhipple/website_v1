@@ -7,7 +7,7 @@ const ROLES = [
   'ML Engineer',
   'Full-Stack Developer',
   'Data Scientist',
-  'Startup Builder',
+  'Startup Co-Founder',
 ];
 
 const HeroSection: React.FC = () => {
@@ -99,9 +99,9 @@ const HeroSection: React.FC = () => {
 
           <motion.div className={styles.bio} variants={itemVariants}>
             <p>
-              CS student at <span className={styles.accentText}>UT Austin</span> specializing in machine learning,
-              data science &amp; software engineering. Co-founder of{' '}
-              <span className={styles.accentText}>Gmango AI</span> — building intelligent healthcare tools.
+              Bachelor's in CS from <span className={styles.accentText}>UT Austin</span> specializing in machine learning,
+              data science &amp; software engineering. Founding Engineer of{' '}
+              <span className={styles.accentText}>Gmango AI</span> — building AI healthcare tools.
             </p>
           </motion.div>
 
@@ -173,13 +173,13 @@ const HeroSection: React.FC = () => {
               </div>
               <div className={styles.statDivider} />
               <div className={styles.statItem}>
-                <span className={styles.statValue}>3+ yrs</span>
+                <span className={styles.statValue}>1+ yrs</span>
                 <span className={styles.statLabel}>Experience</span>
               </div>
               <div className={styles.statDivider} />
               <div className={styles.statItem}>
-                <span className={styles.statValue}>6 projects</span>
-                <span className={styles.statLabel}>Shipped</span>
+                <span className={styles.statValue}>Austin, TX</span>
+                <span className={styles.statLabel}>Location</span>
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ const HeroSection: React.FC = () => {
             Machine Learning
           </div>
           <div className={styles.badge} style={{ bottom: '18%', left: '-12%' }}>
-            <span className={styles.badgeDot} style={{ background: '#a855f7' }} />
+            <span className={styles.badgeDot} style={{ background: '#41e26e' }} />
             Full-Stack Dev
           </div>
         </motion.div>

@@ -10,6 +10,7 @@ interface ProjectCardProps {
   gradient: [string, string];
   skills: string[];
   fullDescription: string;
+  imageCredit?: React.ReactNode;
   index?: number;
 }
 
@@ -20,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   gradient,
   skills,
   fullDescription,
+  imageCredit,
   index = 0,
 }) => {
   const [opened, setOpened] = useState(false);
@@ -40,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
   };
 
-  const SKILL_COLORS = ['#3b82f6', '#8b5cf6', '#06b6d4', '#10b981', '#a855f7', '#ec4899'];
+  const SKILL_COLORS = ['#3b82f6', '#41e26e', '#06b6d4', '#10b981', '#41e26e', '#ec4899'];
   const gradientStyle = `linear-gradient(135deg, ${gradient[0]}, ${gradient[1]})`;
 
   return (
@@ -125,6 +127,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className={styles.modalSection}>
           <h4 className={styles.modalSectionLabel}>About this project</h4>
           <p className={styles.modalText}>{fullDescription}</p>
+          {imageCredit != null && (
+            <div className={styles.modalCitation}>
+              <span className={styles.modalCitationLabel}>Image credit</span>
+              <span className={styles.modalCitationText}>{imageCredit}</span>
+            </div>
+          )}
         </div>
         <div className={styles.modalSection}>
           <h4 className={styles.modalSectionLabel}>Technologies</h4>

@@ -43,7 +43,7 @@
 }
 
 .nameAccent {
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, #3b82f6, #41e26e, #06b6d4);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -68,7 +68,7 @@
 }
 
 .rolePrefix {
-  color: #8b5cf6;
+  color: #41e26e;
   font-weight: 700;
 }
 
@@ -110,7 +110,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6, #41e26e);
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;

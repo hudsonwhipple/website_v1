@@ -14,7 +14,7 @@
 }
 
 .sectionLabel span {
-  color: #a855f7;
+  color: #41e26e;
 }
 
 .sectionTitle {
@@ -215,7 +215,7 @@ a.contactValue:hover {
   gap: 8px;
   width: 100%;
   padding: 0.85rem;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #3b82f6, #41e26e);
   color: #ffffff;
   border: none;
   border-radius: 10px;

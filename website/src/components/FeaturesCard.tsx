@@ -14,37 +14,37 @@ interface Experience {
 
 const EXPERIENCES: Experience[] = [
   {
-    role: 'ML Engineer Intern',
+    role: 'SWE & ML Engineer',
+    company: 'Gmango AI',
+    period: '2023 – Present',
+    description:
+      'Founding Engineer at a tech startup at the intersection of AI and healthcare. Built the full mobile frontend in Flutter — including checkout, user management, and marketplace — and working on AI-powered analysis of image scans.',
+    image: 'Gmango_logo.png',
+    tags: ['AI/ML', 'Dart', 'Flutter', 'Backend', 'Mobile', 'Startup', 'Python', 'REST API'],
+    color: '#06b6d4',
+  },
+  {
+    role: 'Data Scientist Intern',
     company: 'American Airlines',
-    period: 'Summer 2024',
+    period: 'Summer 2025',
     description:
       'Expanded and redesigned the Flight Attendant Standby Tool — an ML model that prevents hundreds of crew delays across every Crew Scheduler monitor at the Integrated Operations Center. Built daily model performance monitoring and conducted live testing before deploying the new model to production.',
     image: 'american_airlines.png',
-    tags: ['Machine Learning', 'Python', 'Data Engineering', 'MLOps'],
+    tags: ['Machine Learning', 'Python', 'Databricks', 'SQL','Data Engineering', 'MLOps'],
     color: '#3b82f6',
   },
   {
     role: 'Data Analyst / SWE',
     company: 'Curricular Analytics — UT Austin CTL',
-    period: '2024 – Present',
+    period: '2024 – 2026',
     description:
       'Led a team of developers building a web app that analyzes degree plans using live data to identify bottlenecks in college majors. Presented a prototype to 60+ faculty administrators and collaborating with stakeholders to drive data-informed academic planning.',
     image: 'UT_Austin.png',
     tags: ['React', 'Data Analysis', 'PostgreSQL', 'Python'],
-    color: '#8b5cf6',
+    color: '#41e26e',
   },
   {
-    role: 'Co-Founder & SWE',
-    company: 'Gmango AI',
-    period: '2023 – Present',
-    description:
-      'Co-founded a dental tech startup at the intersection of AI and healthcare. Built the full mobile frontend in Flutter — including checkout, user management, and marketplace — and working on AI-powered analysis of image scans.',
-    image: 'Gmango_logo.png',
-    tags: ['Flutter', 'Dart', 'AI/ML', 'Mobile', 'Startup'],
-    color: '#06b6d4',
-  },
-  {
-    role: 'Research SWE',
+    role: 'Undergraduate Researcher',
     company: 'Code Assist — UT Austin',
     period: '2023',
     description:
@@ -55,7 +55,7 @@ const EXPERIENCES: Experience[] = [
   },
 ];
 
-const SKILL_TAG_COLORS = ['#3b82f6', '#8b5cf6', '#06b6d4', '#10b981', '#a855f7'];
+const SKILL_TAG_COLORS = ['#3b82f6', '#41e26e', '#06b6d4', '#10b981', '#41e26e'];
 
 export function FeaturesCards() {
   return (

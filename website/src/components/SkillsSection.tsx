@@ -51,7 +51,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'Backend & Databases',
     CategoryIcon: IconDatabase as IconComponent,
-    color: '#8b5cf6',
+    color: '#41e26e',
     skills: [
       { name: 'Flask', Icon: SiFlask as IconComponent },
       { name: 'PostgreSQL', Icon: SiPostgresql as IconComponent },
@@ -72,7 +72,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'ML & AI',
     CategoryIcon: IconBrain as IconComponent,
-    color: '#a855f7',
+    color: '#41e26e',
     skills: [
       { name: 'PyTorch', Icon: SiPytorch as IconComponent },
       { name: 'Google Colab', Icon: TbBrandGoogle as IconComponent },

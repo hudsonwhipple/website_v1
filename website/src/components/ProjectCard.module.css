@@ -79,8 +79,8 @@
 .projectImage {
   position: relative;
   z-index: 2;
-  max-width: 65%;
-  max-height: 100px;
+  max-width: 100%;
+  max-height: 200px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -221,7 +221,7 @@
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  height: 180px;
+  min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,8 +230,8 @@
 .modalImage {
   position: relative;
   z-index: 2;
-  max-width: 55%;
-  max-height: 110px;
+  max-width: 85%;
+  max-height: 220px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -257,6 +257,41 @@
   font-size: 0.88rem;
   line-height: 1.75;
   margin: 0;
+}
+
+.modalCitation {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(195, 149, 91, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.modalCitationLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7a5a51;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.modalCitationText {
+  font-size: 0.78rem;
+  color: #8a6e63;
+  line-height: 1.5;
+}
+
+.modalCitationText a {
+  color: #c3955b;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.modalCitationText a:hover {
+  color: #d4a870;
 }
 
 .modalTags {
