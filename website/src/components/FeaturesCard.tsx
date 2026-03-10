@@ -29,7 +29,7 @@ const EXPERIENCES: Experience[] = [
     period: 'Summer 2025',
     description:
       'Expanded and redesigned the Flight Attendant Standby Tool — an ML model that prevents hundreds of crew delays across every Crew Scheduler monitor at the Integrated Operations Center. Built daily model performance monitoring and conducted live testing before deploying the new model to production.',
-    image: 'american_airlines.png',
+    image: 'american_airlines_logo.webp',
     tags: ['Machine Learning', 'Python', 'Databricks', 'SQL','Data Engineering', 'MLOps'],
     color: '#3b82f6',
   },
@@ -39,7 +39,7 @@ const EXPERIENCES: Experience[] = [
     period: '2024 – 2026',
     description:
       'Led a team of developers building a web app that analyzes degree plans using live data to identify bottlenecks in college majors. Presented a prototype to 60+ faculty administrators and collaborating with stakeholders to drive data-informed academic planning.',
-    image: 'UT_Austin.png',
+    image: 'longhorn_logo.png',
     tags: ['React', 'Data Analysis', 'PostgreSQL', 'Python'],
     color: '#41e26e',
   },
@@ -49,7 +49,7 @@ const EXPERIENCES: Experience[] = [
     period: '2023',
     description:
       'Developed unit tests for an AI auto-grading application, including multi-threading tests. Implemented API endpoints in the backend for user management against a PostgreSQL database.',
-    image: 'UT_Austin.png',
+    image: 'longhorn_logo.png',
     tags: ['Python', 'PostgreSQL', 'Testing', 'REST API'],
     color: '#10b981',
   },
