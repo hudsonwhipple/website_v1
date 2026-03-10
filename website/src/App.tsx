@@ -1,127 +1,190 @@
 import React from 'react';
-import { IconCheck } from '@tabler/icons-react';
-import { MantineProvider, List, ThemeIcon } from '@mantine/core';
-import Navbar from './components/Navbar';
-import DisplayCard from './components/DisplayCard';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import FloatingCard from './components/FloatingCard';
-import ContactUs from './components/ContactUs';
+import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
+import './App.css';
+
+import ParticleBackground from './components/ParticleBackground';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import { motion } from 'framer-motion';
+import SkillsSection from './components/SkillsSection';
+import ProjectCard from './components/ProjectCard';
 import { FeaturesCards } from './components/FeaturesCard';
+import ContactUs from './components/ContactUs';
+
+const PROJECTS: {
+  img: string;
+  title: string;
+  description: string;
+  gradient: [string, string];
+  skills: string[];
+  fullDescription: string;
+}[] = [
+  {
+    img: 'Google_Co_Lab.png',
+    title: 'Climate Data Warehouse',
+    description: 'Data warehouse to analyze climate policies',
+    gradient: ['#0d1c16', '#0d1530'],
+    skills: ['GCP', 'dbt', 'SQL', 'Data Engineering', 'ETL'],
+    fullDescription:
+      'Developed in GCP and dbt a comprehensive data warehouse to take several climate datasets through transformation layers. The project analyzes the effects of environmental policy on climate patterns and provides insights for policy makers. Implemented efficient data pipelines and transformation logic to handle large-scale climate data.',
+  },
+  {
+    img: 'SMOTE.png',
+    title: 'Grocery Recommender System',
+    description: 'ML-powered product recommendation system',
+    gradient: ['#130d22', '#0d1530'],
+    skills: ['Python', 'Machine Learning', 'SMOTE', 'Feature Engineering', 'scikit-learn'],
+    fullDescription:
+      'Feature engineered and used Machine Learning to create an intelligent method of recommending products to likely customers. Implemented SMOTE for handling imbalanced datasets and applied various ML algorithms to predict customer purchasing patterns.',
+  },
+  {
+    img: 'website_personal.png',
+    title: 'Personal Website',
+    description: 'Personal Website',
+    gradient: ['#0d1530', '#160d30'],
+    skills: ['React', 'TypeScript', 'CSS', 'Mantine UI', 'Framer Motion'],
+    fullDescription:
+      'This frontend website was created through React, open-source libraries, and TypeScript. Features include particle backgrounds, animated hero section, 3D tilt cards, typewriter effects, and smooth scroll-triggered animations throughout.',
+  },
+  {
+    img: 'concert.jpg',
+    title: 'Cheap Cheap Tickets',
+    description: 'Full-stack ticket marketplace platform',
+    gradient: ['#1e0d0d', '#0d1530'],
+    skills: ['React', 'Flask', 'PostgreSQL', 'REST API', 'Python'],
+    fullDescription:
+      'Implemented a full-stack website in React, Flask, PostgreSQL, and with REST API. The platform allows users to buy and sell event tickets with secure authentication, real-time availability updates, and integrated payment processing.',
+  },
+  {
+    img: 'operatingsystem.jpg',
+    title: 'PintOS',
+    description: 'Custom operating system',
+    gradient: ['#0d1a0d', '#160d30'],
+    skills: ['C', 'Operating Systems', 'Concurrency', 'Memory Management', 'Low-level Programming'],
+    fullDescription:
+      'Built an operating system from scratch with priority donation, page replacement algorithms, and synchronization mechanisms. Implemented thread scheduling, file system operations, and virtual memory management.',
+  },
+  {
+    img: 'computerchip.jpg',
+    title: 'System Emulator',
+    description: 'Processor emulator with optimization',
+    gradient: ['#0d0d22', '#1a0d16'],
+    skills: ['C', 'Assembly', 'Computer Architecture', 'Pipeline Optimization', 'Systems Programming'],
+    fullDescription:
+      'Developed the software for a processor emulator under the PIPE- optimization technique. Implemented instruction pipelining, hazard detection, and forwarding logic to maximize throughput.',
+  },
+];
 
 const App: React.FC = () => {
   return (
     <MantineProvider>
-
-      <div className="App">
+      <div className="app">
+        <ParticleBackground />
         <Navbar />
-        <header className="App-header">
-          <main>
-            <div className="container">
+
+        <main className="main-content">
+          {/* Hero / About */}
+          <HeroSection />
+
+          {/* About extended bio */}
+          <section className="about-bio">
+            <div className="bio-inner">
+              <motion.div
+                className="bio-grid"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <p className="bio-paragraph">
+                  I am a third-year Computer Science student at the{' '}
+                  <span className="accent">University of Texas at Austin</span>, complementing my major
+                  with a certificate in Applied Statistical Modeling and a minor in Statistics and Data Sciences.
+                  My primary areas of interest lie at the intersection of machine learning, data science, and software engineering.
+                </p>
+                <p className="bio-paragraph">
+                  Beyond academics, I helped found a startup called{' '}
+                  <span className="accent">Gmango AI</span>, which operates at the intersection of{' '}
+                  <strong>AI and healthcare</strong>. I've loved working in a fast-paced, dynamic environment
+                  where I can make a meaningful impact.
+                </p>
+                <p className="bio-paragraph">
+                  Over the summer, I interned at <span className="accent">American Airlines</span>, where I
+                  expanded and redesigned the <strong>Flight Attendant Standby Tool</strong> — an ML model
+                  that helps prevent <strong>hundreds of crew delays</strong> on every Crew Scheduler's monitor
+                  at the Integrated Operations Center.
+                </p>
+                <p className="bio-paragraph">
+                  In my final semester at UT Austin, I led a team of developers called{' '}
+                  <span className="accent">Curricular Analytics</span> at the Center for Teaching and Learning.
+                  Our goal is to build a web app that analyzes degree plans to identify{' '}
+                  <strong>bottlenecks in college majors</strong>. I presented to over{' '}
+                  <strong>60 faculty administrators</strong>.
+                </p>
+              </motion.div>
             </div>
+          </section>
 
+          {/* Skills */}
+          <SkillsSection />
 
-            <section id="about">
-              <br></br>
-              <div className="row justify-content-center">
-                <div className="col-md-6 mb-4">
-                  <h1 className="section-header">About <span className="highlight">Me</span></h1>
-                  <List
-              mt={30}
-              spacing="sm"
-              size="sm"
-              icon={
-                <ThemeIcon size={20} radius="xl">
-                  <IconCheck size={12} stroke={1.5} />
-                </ThemeIcon>
-              }
-            >
-              <List.Item className="descriptor">
-                <b>Programming Languages:</b> – Java, C, Python, JavaScript, Dart, Objective-C, SQL
-              </List.Item>
-              <List.Item className="descriptor">
-                <b>Worked With: </b> – React, Vue, Flutter, Flask, PostgreSQL, GCP, Docker, PyTorch, TensorFlow
-              </List.Item>
-            </List>
-                </div>
-                <div className="col-md-6 mb-4">
-                  {/* <img src="profile_baby.jpeg" alt="Profile" className="profile-image" /> */}
-                  <FloatingCard />
+          {/* Projects */}
+          <section id="projects" className="projects-section">
+            <div className="section-inner">
+              <motion.div
+                className="section-label"
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                {'<'}<span style={{ color: '#10b981' }}>projects</span>{' />'}
+              </motion.div>
 
-                </div>
+              <motion.h2
+                className="section-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                Things I've Built
+              </motion.h2>
+
+              <motion.p
+                className="section-subtitle"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Some projects are not publicly available — feel free to reach out to learn more.
+              </motion.p>
+
+              <div className="projects-grid">
+                {PROJECTS.map((project, index) => (
+                  <ProjectCard key={project.title} {...project} index={index} />
+                ))}
               </div>
-              <p className="section-body">
-I am a third-year Computer Science student at the University of Texas at Austin, complementing my major with a certificate in Applied Statistical Modeling and a minor in Statistics and Data Sciences. 
-My primary areas of interest lie at the intersection of machine learning, data science, and software engineering.
-              </p>
-              <p className="section-body"> 
-              Beyond academics, I contribute to GMango, an innovative tech company combining AI with dental technology to revolutionize oral healthcare. 
-              As a key developer, I’ve focused on building the company’s mobile app, including features such as user profiles, settings, and marketplace. 
-              Additionally, I’m involved in an university initiative aimed at analyzing the Curricular Analytics of 40 prominent degree programs. 
-              This project seeks to identify administrative barriers to student success by developing a data-driven platform to visualize and interpret trends, 
-              shaping the future of academic curriculum at UT Austin.
-              </p>
-            </section>
-            <section id="projects">
-              <h1 className="section-header">Projects</h1>
-              <p className="section-body"> Some projects completed are not publically available but please reach out to me to learn more about them!</p>
-              <div className="container">
-                <div className="row justify-content-center">
-                  <div className="col-md-4 mb-4">
-                    <DisplayCard img="Google_Co_Lab.png" title="Climate Data Warehouse" description="Developed in 
-                    GCP and dbt a data warehouse to take several climate datasets through transformation layers to 
-                    analyze effects of policy on the environment and more" link="" available="secondary"/>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <DisplayCard img="SMOTE.png" title="Grocery Item Predictor" description="Feature Engieered 
-                    and used Machine Learning to create a method of recommending products to likely customers" link="" available="secondary"/>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <DisplayCard img="website_personal.png" title="Personal Website" description="This frontend website 
-                    was created through React, open-source libraries, and type script." link="https://github.com/hudsonwhipple/website_v1" available="primary"/>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <DisplayCard img="concert.jpg" title="Cheap Cheap Tickets" description="Implemented a 
-                    fullstack website in React, Flask, PostgreSQL, and with REST API" link="https://github.com/hudsonwhipple/fullstackweb" available="primary"/>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <DisplayCard img="operatingsystem.jpg" title="PintOS" description="Built an operating system 
-                    with priority donation, page replacement algorithms, and synchronization." link="" available="secondary"/>
-                  </div>
-                  <div className="col-md-4 mb-4">
-                    <DisplayCard img="computerchip.jpg" title="System Emulator" description="Developed the 
-                    software for a processor under the PIPE- optimization" link="" available="secondary"/>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <br></br>
-            <section id="experience">
-              <div className="container">
-                <div className="row justify-content-center">
-                  <div>
-                    <h1 className="section-header">Experience</h1>
-                    <FeaturesCards />
-                  </div>
-                </div>
-              </div>
-            </section>
-            <br></br>
-            <section id="contact">
-              <div className="container">
-                <div className="row justify-content-center">
-                  <div>
-                      <ContactUs />
-                  </div>
-                </div>
-              </div>
-            </section>
-          </main>
-        </header>
+            </div>
+          </section>
+
+          {/* Experience */}
+          <FeaturesCards />
+
+          {/* Contact */}
+          <ContactUs />
+        </main>
+
+        <footer className="footer">
+          <p>
+            Designed &amp; built by <span className="accent">Hudson Whipple</span> · {new Date().getFullYear()}
+          </p>
+        </footer>
       </div>
     </MantineProvider>
   );
-}
+};
 
 export default App;

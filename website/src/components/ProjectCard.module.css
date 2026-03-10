@@ -1,0 +1,278 @@
+.cardWrapper {
+  height: 100%;
+}
+
+/* ---- Main Card ---- */
+.card {
+  position: relative;
+  /* background is set via inline style (the per-project gradient) */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.12s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Animated gradient glow border that appears on hover */
+.glowBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.5),
+    rgba(139, 92, 246, 0.4),
+    rgba(6, 182, 212, 0.3)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card:hover .glowBorder {
+  opacity: 1;
+}
+
+/* ---- Image zone — ~70% of card height ---- */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  flex: 0 0 68%;
+  min-height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle film-grain noise for texture on the gradient */
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.projectImage {
+  position: relative;
+  z-index: 2;
+  max-width: 65%;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card:hover .projectImage {
+  transform: scale(1.08) translateY(-2px);
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+  z-index: 3;
+}
+
+.card:hover .imageOverlay {
+  opacity: 1;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.5rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  color: #f1f5f9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Card body — sits on the same gradient as the rest of the card ---- */
+.cardBody {
+  position: relative;
+  padding: 1.1rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: none;
+}
+
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* ---- Tags ---- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--tag-color, #3b82f6) 12%, rgba(255,255,255,0.03));
+  color: var(--tag-color, #3b82f6);
+  border: 1px solid color-mix(in srgb, var(--tag-color, #3b82f6) 30%, transparent);
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(4px);
+}
+
+.tagMore {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: rgba(148, 163, 184, 0.07);
+  color: #475569;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  letter-spacing: 0.03em;
+}
+
+/* ---- Modal ---- */
+.modalContent {
+  background: rgba(10, 12, 22, 0.96) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7) !important;
+}
+
+.modalHeader {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  padding: 1.25rem 1.5rem !important;
+}
+
+.modalTitle {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+}
+
+.modalClose {
+  color: #475569 !important;
+}
+
+.modalBody {
+  background: transparent !important;
+  padding: 1.5rem !important;
+}
+
+.modalImageWrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImage {
+  position: relative;
+  z-index: 2;
+  max-width: 55%;
+  max-height: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5));
+}
+
+.modalSection {
+  margin-bottom: 1.5rem;
+}
+
+.modalSectionLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #475569;
+  margin-bottom: 0.7rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.modalText {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.modalTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.modalTag {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 5px 13px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--tag-color, #3b82f6) 12%, rgba(255,255,255,0.03));
+  color: var(--tag-color, #3b82f6);
+  border: 1px solid color-mix(in srgb, var(--tag-color, #3b82f6) 28%, transparent);
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(4px);
+}

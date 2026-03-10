@@ -1,139 +1,240 @@
-.App {
-  text-align: center;
+/* ============================
+   Luxury Palette Tokens
+   Espresso  #261311
+   Emerald   #1c3934
+   Amber     #ba6a36
+   Cognac    #c3955b
+   Champagne #e6c8b7
+   Blush     #f9edf0
+   ============================ */
+
+:root {
+  --bg:              #261311;
+  --bg-secondary:    #1a0e0c;
+  --primary:         #ba6a36;
+  --primary-light:   #c97a46;
+  --secondary:       #c3955b;
+  --secondary-light: #d4a870;
+  --emerald:         #3d8c7e;
+  --emerald-dark:    #1c3934;
+  --champagne:       #e6c8b7;
+  --blush:           #f9edf0;
+  --text:            #f9edf0;
+  --text-secondary:  #c8a898;
+  --text-muted:      #7a5a51;
+  --border:          rgba(195, 149, 91, 0.14);
+  --glass:           rgba(230, 200, 183, 0.04);
+}
+
+/* ============================
+   Reset & Base
+   ============================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: radial-gradient(circle, #353535, #000814, #61dafb);
-  background-size: 200% 200%; /* For animated gradients */
-  animation: gradientAnimation 10s ease infinite; /* Optional: animate gradient */
-  margin: 0; /* Ensure no white spaces around the background */
-  padding: 0; /* Ensure no padding around content */
-  min-height: 100vh; /* Full viewport height */
-  font-family: Arial, sans-serif; /* Optional: Global font */
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+/* ============================
+   Background mesh gradient
+   ============================ */
 
-
-.App-logo {
-  height: 40vmin;
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(186, 106, 54, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 10%,  rgba(28,  57,  52, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 90%,  rgba(195, 149, 91, 0.07) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ============================
+   App Shell
+   ============================ */
 
-.App-header {
+.app {
+  position: relative;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.profile-image{
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  padding: 10px;
-  border: 1px solid #ffff;
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.contacts {
-  box-sizing: border-box;
+.main-content {
   position: relative;
-  border-radius: var(--mantine-radius-lg);
-  background-size: cover;
-  background-position: center;
-  background-color: #5ab1bb;
-  border: 1px solid transparent;
-  padding: var(--mantine-spacing-xl);
-  flex: 0 0 280px;
-  height: 25rem;
-
-  @media (max-width: var(--mantine-breakpoint-sm)) {
-    margin-bottom: var(--mantine-spacing-sm);
-    padding-left: var(--mantine-spacing-md);
-  }
+  z-index: 1;
 }
 
-.contactTitle {
-  margin-bottom: calc(var(--mantine-spacing-xl) * 1.5);
-  font-size: 3rem;
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
+/* ============================
+   Shared Section Styles
+   ============================ */
 
-  @media (max-width: var(--mantine-breakpoint-sm)) {
-    margin-bottom: var(--mantine-spacing-xl);
-  }
+.section-label {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
 }
 
-.descriptor {
-  margin: 0 7rem;
-  text-align: left;
-}
-
-.section-header .highlight{
-  position: relative;
-  background-color: rgba(41, 203, 221, 0.25);
-  border-radius: 5%;
-  padding: 4px 10px;
-}
-
-.section-header{
-  color: var(--mantine-color-white);
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
-  font-size: 104px;
-  line-height: 1.2;
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
-  padding: 40px;
+  color: var(--text);
+  margin: 0 0 1rem;
+  letter-spacing: -0.03em;
+}
 
-  @media (max-width: var(--mantine-breakpoint-xs)) {
-    font-size: 28px;
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0 0 2.5rem;
+  max-width: 500px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.accent {
+  color: var(--secondary-light);
+  font-weight: 600;
+}
+
+/* ============================
+   About Bio Section
+   ============================ */
+
+.about-bio {
+  position: relative;
+  z-index: 1;
+}
+
+.bio-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+}
+
+.bio-paragraph {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.bio-paragraph strong {
+  color: var(--champagne);
+  font-weight: 600;
+}
+
+/* ============================
+   Projects Section
+   ============================ */
+
+.projects-section {
+  position: relative;
+  z-index: 1;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ============================
+   Footer
+   ============================ */
+
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ============================
+   Scrollbar
+   ============================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(186, 106, 54, 0.35);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(186, 106, 54, 0.55);
+}
+
+/* ============================
+   Selection
+   ============================ */
+
+::selection {
+  background: rgba(195, 149, 91, 0.3);
+  color: #f9edf0;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+
+@media (max-width: 900px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.section-body{
-  font-size: 1.5rem;
-  font-family: Greycliff CF, var(--mantine-font-family);
-  margin: 1rem 8rem;
-  padding: 20px;
-}
-
-.profile-image:hover{
-  filter: brightness(0.8);
-  transform: scale(1.1);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .section-inner {
+    padding: 4rem 1.25rem;
   }
 }

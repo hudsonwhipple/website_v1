@@ -1,18 +1,18 @@
+/* Mantine breakpoints */
+:root {
+  --mantine-breakpoint-xs: 480px;
+  --mantine-breakpoint-sm: 640px;
+  --mantine-breakpoint-md: 768px;
+  --mantine-breakpoint-lg: 1024px;
+  --mantine-breakpoint-xl: 1280px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-:root {
-  --mantine-breakpoint-md: 768px;
-  --mantine-breakpoint-xs: 480px;
+img {
+  max-width: 100%;
+  display: block;
 }
