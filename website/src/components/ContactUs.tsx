@@ -1,7 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import styles from './ContactUs.module.css';
+
+const EMAILJS_PUBLIC_KEY = 's9FdrC1xpv5O6PU6N';
 
 const CONTACT_INFO = [
   {
@@ -66,6 +68,10 @@ const ContactUs: React.FC = () => {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
+  useEffect(() => {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -79,8 +85,7 @@ const ContactUs: React.FC = () => {
       await emailjs.send(
         'service_k6xxcuu',
         'template_7o4cpam',
-        { name: formData.name, email: formData.email, message: formData.message },
-        's9FdrC1xpv5O6PU6N'
+        { name: formData.name, email: formData.email, message: formData.message }
       );
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
