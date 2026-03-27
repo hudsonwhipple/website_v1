@@ -199,7 +199,7 @@ const App: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                {'<'}<span style={{ color: '#10b981' }}>projects</span>{' />'}
+                {'<'}<span style={{ color: '#6abf7b' }}>projects</span>{' />'}
               </motion.div>
 
               <motion.h2

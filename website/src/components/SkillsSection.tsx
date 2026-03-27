@@ -28,7 +28,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'Languages',
     CategoryIcon: IconCode as IconComponent,
-    color: '#3b82f6',
+    color: '#7eb8d4',
     skills: [
       { name: 'Java', Icon: SiOpenjdk as IconComponent },
       { name: 'C', Icon: SiC as IconComponent },
@@ -42,7 +42,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'Frontend & Mobile',
     CategoryIcon: IconDeviceMobile as IconComponent,
-    color: '#06b6d4',
+    color: '#7eb8d4',
     skills: [
       { name: 'React', Icon: SiReact as IconComponent },
       { name: 'Flutter', Icon: SiFlutter as IconComponent },
@@ -51,7 +51,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'Backend & Databases',
     CategoryIcon: IconDatabase as IconComponent,
-    color: '#41e26e',
+    color: '#6abf7b',
     skills: [
       { name: 'Flask', Icon: SiFlask as IconComponent },
       { name: 'PostgreSQL', Icon: SiPostgresql as IconComponent },
@@ -61,7 +61,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'Cloud & DevOps',
     CategoryIcon: IconCloud as IconComponent,
-    color: '#10b981',
+    color: '#6abf7b',
     skills: [
       { name: 'GCP', Icon: SiGooglecloud as IconComponent },
       { name: 'AWS', Icon: SiAmazon as IconComponent },
@@ -72,7 +72,7 @@ const CATEGORIES: Category[] = [
   {
     title: 'ML & AI',
     CategoryIcon: IconBrain as IconComponent,
-    color: '#41e26e',
+    color: '#6abf7b',
     skills: [
       { name: 'PyTorch', Icon: SiPytorch as IconComponent },
       { name: 'Google Colab', Icon: TbBrandGoogle as IconComponent },

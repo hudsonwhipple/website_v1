@@ -26,7 +26,7 @@
 
 .greeting {
   font-size: 1.1rem;
-  color: #06b6d4;
+  color: #7eb8d4;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
 }
 
 .nameAccent {
-  background: linear-gradient(135deg, #3b82f6, #41e26e, #06b6d4);
+  background: linear-gradient(135deg, #7eb8d4, #6abf7b, #7eb8d4);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -68,7 +68,7 @@
 }
 
 .rolePrefix {
-  color: #41e26e;
+  color: #6abf7b;
   font-weight: 700;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .cursor {
-  color: #3b82f6;
+  color: #7eb8d4;
   animation: blink 1s step-end infinite;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .accentText {
-  color: #60a5fa;
+  color: #a8d4e8;
   font-weight: 600;
 }
 
@@ -110,7 +110,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #3b82f6, #41e26e);
+  background: linear-gradient(135deg, #7eb8d4, #6abf7b);
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
@@ -118,12 +118,12 @@
   letter-spacing: 0.04em;
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 4px 20px rgba(126, 184, 212, 0.35);
 }
 
 .ctaPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 30px rgba(126, 184, 212, 0.5);
   color: #ffffff;
   text-decoration: none;
 }
@@ -163,7 +163,7 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(126, 184, 212, 0.18), transparent 70%);
   top: -30px;
   right: -30px;
   z-index: 0;
@@ -176,7 +176,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.14), transparent 70%);
+  background: radial-gradient(circle, rgba(126, 184, 212, 0.14), transparent 70%);
   bottom: 10px;
   left: -20px;
   z-index: 0;
@@ -213,7 +213,7 @@
 .glassCard:hover {
   box-shadow:
     0 40px 80px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(59, 130, 246, 0.12),
+    0 0 40px rgba(126, 184, 212, 0.12),
     0 0 0 1px rgba(255, 255, 255, 0.07) inset,
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
@@ -361,7 +361,7 @@
   display: block;
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, #3b82f6, transparent);
+  background: linear-gradient(to bottom, #7eb8d4, transparent);
   animation: scrollBounce 2s ease-in-out infinite;
 }
 

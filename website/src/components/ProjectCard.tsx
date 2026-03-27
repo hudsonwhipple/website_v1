@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
   };
 
-  const SKILL_COLORS = ['#3b82f6', '#41e26e', '#06b6d4', '#10b981', '#41e26e', '#ec4899'];
+  const SKILL_COLORS = ['#7eb8d4', '#6abf7b', '#7eb8d4', '#6abf7b', '#6abf7b', '#ec4899'];
   const gradientStyle = `linear-gradient(135deg, ${gradient[0]}, ${gradient[1]})`;
 
   return (

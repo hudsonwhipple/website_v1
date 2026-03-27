@@ -10,7 +10,7 @@ interface Particle {
   color: string;
 }
 
-const COLORS = ['#3b82f6', '#41e26e', '#06b6d4', '#41e26e', '#60a5fa'];
+const COLORS = ['#7eb8d4', '#6abf7b', '#7eb8d4', '#6abf7b', '#a8d4e8'];
 const PARTICLE_COUNT = 80;
 const CONNECTION_DISTANCE = 150;
 const MAX_SPEED = 0.4;

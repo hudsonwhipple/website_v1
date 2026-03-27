@@ -19,7 +19,7 @@ export default function DemoOne() {
         <MeshGradient
           style={fullCover}
           // ↓ GRADIENT COLORS — swap these hex values to change the background palette
-          colors={["#050816", "#0d1117", "#1a1a2e", "#3b82f6", "#8b5cf6"]}
+          colors={["#000000", "#0a0a0a", "#0d1a14", "#0d1520", "#111111"]}
           speed={speed}
         />
       )}
@@ -31,7 +31,7 @@ export default function DemoOne() {
             // ↓ BACKGROUND COLOR behind dots
             colorBack="#050816"
             // ↓ DOT COLORS
-            colors={["#3b82f6", "#8b5cf6", "#06b6d4"]}
+            colors={["#7eb8d4", "#6abf7b", "#a8d4e8"]}
             speed={speed}
           />
         </div>
@@ -41,14 +41,14 @@ export default function DemoOne() {
         <>
           <MeshGradient
             style={fullCover}
-            colors={["#050816", "#0d1117", "#1a1a2e", "#3b82f6", "#8b5cf6"]}
+            colors={["#000000", "#0a0a0a", "#0d1a14", "#0d1520", "#111111"]}
             speed={speed * 0.5}
           />
           <div style={{ ...fullCover, opacity: 0.6 }}>
             <DotOrbit
               style={fullCover}
               colorBack="transparent"
-              colors={["#3b82f6", "#8b5cf6"]}
+              colors={["#7eb8d4", "#6abf7b"]}
               speed={speed * 1.5}
             />
           </div>

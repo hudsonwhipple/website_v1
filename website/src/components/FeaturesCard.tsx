@@ -21,7 +21,7 @@ const EXPERIENCES: Experience[] = [
       'Founding Engineer at a tech startup at the intersection of AI and healthcare. Built the full mobile frontend in Flutter — including checkout, user management, and marketplace — and working on AI-powered analysis of image scans.',
     image: 'Gmango_logo.png',
     tags: ['AI/ML', 'Dart', 'Flutter', 'Backend', 'Mobile', 'Startup', 'Python', 'REST API'],
-    color: '#06b6d4',
+    color: '#7eb8d4',
   },
   {
     role: 'Data Scientist Intern',
@@ -31,7 +31,7 @@ const EXPERIENCES: Experience[] = [
       'Expanded and redesigned the Flight Attendant Standby Tool — an ML model that prevents hundreds of crew delays across every Crew Scheduler monitor at the Integrated Operations Center. Built daily model performance monitoring and conducted live testing before deploying the new model to production.',
     image: 'american_airlines_logo.webp',
     tags: ['Machine Learning', 'Python', 'Databricks', 'SQL','Data Engineering', 'MLOps'],
-    color: '#3b82f6',
+    color: '#7eb8d4',
   },
   {
     role: 'Data Analyst / SWE',
@@ -41,7 +41,7 @@ const EXPERIENCES: Experience[] = [
       'Led a team of developers building a web app that analyzes degree plans using live data to identify bottlenecks in college majors. Presented a prototype to 60+ faculty administrators and collaborating with stakeholders to drive data-informed academic planning.',
     image: 'longhorn_logo.png',
     tags: ['React', 'Data Analysis', 'PostgreSQL', 'Python'],
-    color: '#41e26e',
+    color: '#6abf7b',
   },
   {
     role: 'Undergraduate Researcher',
@@ -51,11 +51,11 @@ const EXPERIENCES: Experience[] = [
       'Developed unit tests for an AI auto-grading application, including multi-threading tests. Implemented API endpoints in the backend for user management against a PostgreSQL database.',
     image: 'longhorn_logo.png',
     tags: ['Python', 'PostgreSQL', 'Testing', 'REST API'],
-    color: '#10b981',
+    color: '#6abf7b',
   },
 ];
 
-const SKILL_TAG_COLORS = ['#3b82f6', '#41e26e', '#06b6d4', '#10b981', '#41e26e'];
+const SKILL_TAG_COLORS = ['#7eb8d4', '#6abf7b', '#7eb8d4', '#6abf7b', '#6abf7b'];
 
 export function FeaturesCards() {
   return (

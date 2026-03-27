@@ -14,7 +14,7 @@
 }
 
 .sectionLabel span {
-  color: #06b6d4;
+  color: #7eb8d4;
 }
 
 .sectionTitle {
@@ -40,9 +40,9 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    #3b82f6 15%,
-    #41e26e 50%,
-    #06b6d4 85%,
+    #7eb8d4 15%,
+    #6abf7b 50%,
+    #7eb8d4 85%,
     transparent
   );
 }
@@ -65,8 +65,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--node-color, #3b82f6);
-  box-shadow: 0 0 14px var(--node-color, #3b82f6);
+  background: var(--node-color, #7eb8d4);
+  box-shadow: 0 0 14px var(--node-color, #7eb8d4);
   z-index: 1;
 }
 
@@ -74,7 +74,7 @@
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 1px solid var(--node-color, #3b82f6);
+  border: 1px solid var(--node-color, #7eb8d4);
   opacity: 0.4;
   animation: nodePulse 2.5s ease-in-out infinite;
 }
@@ -107,7 +107,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--card-color, #3b82f6), transparent 60%);
+  background: linear-gradient(90deg, var(--card-color, #7eb8d4), transparent 60%);
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
@@ -122,7 +122,7 @@
   height: 120px;
   background: radial-gradient(
     ellipse 70% 80% at 15% 0%,
-    color-mix(in srgb, var(--card-color, #3b82f6) 10%, transparent),
+    color-mix(in srgb, var(--card-color, #7eb8d4) 10%, transparent),
     transparent 80%
   );
   pointer-events: none;
@@ -132,10 +132,10 @@
 
 .card:hover {
   transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--card-color, #3b82f6) 35%, rgba(255,255,255,0.09));
+  border-color: color-mix(in srgb, var(--card-color, #7eb8d4) 35%, rgba(255,255,255,0.09));
   box-shadow:
     0 16px 50px rgba(0, 0, 0, 0.5),
-    0 0 30px color-mix(in srgb, var(--card-color, #3b82f6) 10%, transparent),
+    0 0 30px color-mix(in srgb, var(--card-color, #7eb8d4) 10%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
@@ -175,10 +175,10 @@
 }
 
 .card:hover .logoWrap {
-  border-color: color-mix(in srgb, var(--card-color, #3b82f6) 40%, rgba(255,255,255,0.12));
+  border-color: color-mix(in srgb, var(--card-color, #7eb8d4) 40%, rgba(255,255,255,0.12));
   box-shadow:
     0 4px 16px rgba(0, 0, 0, 0.35),
-    0 0 10px color-mix(in srgb, var(--card-color, #3b82f6) 15%, transparent),
+    0 0 10px color-mix(in srgb, var(--card-color, #7eb8d4) 15%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
@@ -246,9 +246,9 @@
   font-weight: 600;
   padding: 3px 10px;
   border-radius: 100px;
-  background: color-mix(in srgb, var(--tag-color, #3b82f6) 11%, rgba(255,255,255,0.03));
-  color: var(--tag-color, #3b82f6);
-  border: 1px solid color-mix(in srgb, var(--tag-color, #3b82f6) 28%, transparent);
+  background: color-mix(in srgb, var(--tag-color, #7eb8d4) 11%, rgba(255,255,255,0.03));
+  color: var(--tag-color, #7eb8d4);
+  border: 1px solid color-mix(in srgb, var(--tag-color, #7eb8d4) 28%, transparent);
   letter-spacing: 0.03em;
   backdrop-filter: blur(4px);
 }

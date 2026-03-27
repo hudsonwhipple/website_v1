@@ -186,11 +186,11 @@ const HeroSection: React.FC = () => {
 
           {/* Floating badges outside the card */}
           <div className={styles.badge} style={{ top: '-5%', right: '-8%' }}>
-            <span className={styles.badgeDot} style={{ background: '#3b82f6' }} />
+            <span className={styles.badgeDot} style={{ background: '#7eb8d4' }} />
             Machine Learning
           </div>
           <div className={styles.badge} style={{ bottom: '18%', left: '-12%' }}>
-            <span className={styles.badgeDot} style={{ background: '#41e26e' }} />
+            <span className={styles.badgeDot} style={{ background: '#6abf7b' }} />
             Full-Stack Dev
           </div>
         </motion.div>
