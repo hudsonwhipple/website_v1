@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { IconCode, IconDeviceMobile, IconDatabase, IconCloud, IconBrain } from '@tabler/icons-react';
 import {
-  SiOpenjdk, SiC, SiPython, SiJavascript, SiDart, SiApple,
+  SiOpenjdk, SiC, SiPython, SiJavascript, SiDart,
   SiReact, SiFlutter, SiFlask, SiPostgresql, SiMongodb,
   SiGooglecloud, SiAmazon, SiDocker, SiDatabricks,
   SiPytorch, SiNumpy, SiPandas,
 } from 'react-icons/si';
-import { TbDatabase, TbBrandGoogle } from 'react-icons/tb';
+import { TbDatabase, TbBrandGoogle, TbBrandReactNative } from 'react-icons/tb';
 import styles from './SkillsSection.module.css';
 
 type IconComponent = React.ComponentType<{ size?: number; className?: string }>;
@@ -35,7 +35,6 @@ const CATEGORIES: Category[] = [
       { name: 'Python', Icon: SiPython as IconComponent },
       { name: 'JavaScript', Icon: SiJavascript as IconComponent },
       { name: 'Dart', Icon: SiDart as IconComponent },
-      { name: 'Objective-C', Icon: SiApple as IconComponent },
       { name: 'SQL', Icon: TbDatabase as IconComponent },
     ],
   },
@@ -45,6 +44,7 @@ const CATEGORIES: Category[] = [
     color: '#7eb8d4',
     skills: [
       { name: 'React', Icon: SiReact as IconComponent },
+      { name: 'React Native', Icon: TbBrandReactNative as IconComponent },
       { name: 'Flutter', Icon: SiFlutter as IconComponent },
     ],
   },

@@ -164,24 +164,13 @@ const App: React.FC = () => {
                   My primary areas of interest lie at the intersection of machine learning, data science, and software engineering.
                 </p>
                 <p className="bio-paragraph">
-                  Beyond academics, I helped found a startup called{' '}
+                  Beyond academics, I founded a startup called{' '}
                   <span className="accent">Gmango AI</span>, which operates at the intersection of{' '}
                   <strong>AI and healthcare</strong>. I've loved working in a fast-paced, dynamic environment
-                  where I can make a meaningful impact.
+                  where I can make a meaningful impact. I continue to work on innovative projects in my free time 
+                  spanning from autonomous drones to other AI-powered applications solving real-world problems.
                 </p>
-                <p className="bio-paragraph">
-                  In 2025, I interned at <span className="accent">American Airlines</span>, where I
-                  expanded and redesigned the <strong>Flight Attendant Standby Tool</strong> — an ML model
-                  that helps prevent <strong>100s of crew delays</strong> on every Crew Scheduler's monitor
-                  at the Integrated Operations Center.
-                </p>
-                <p className="bio-paragraph">
-                  In my final semester at UT Austin, I led a team of developers called{' '}
-                  <span className="accent">Curricular Analytics</span> at the Center for Teaching and Learning.
-                  Our goal was to build a web app that analyzes degree plans to identify{' '}
-                  <strong>bottlenecks in college majors</strong>. I presented to over{' '}
-                  <strong>60 faculty administrators</strong>.
-                </p>
+
               </motion.div>
             </div>
           </section>
