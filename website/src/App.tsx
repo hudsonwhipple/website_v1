@@ -3,7 +3,7 @@ import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import './App.css';
 
-import ParticleBackground from './components/ParticleBackground';
+import DemoOne from './components/ui/demo';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import { motion } from 'framer-motion';
@@ -137,7 +137,10 @@ const App: React.FC = () => {
   return (
     <MantineProvider>
       <div className="app">
-        <ParticleBackground />
+        {/* Animated mesh-gradient background — swap activeEffect in demo.tsx to change style */}
+        <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+          <DemoOne />
+        </div>
         <Navbar />
 
         <main className="main-content">
