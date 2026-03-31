@@ -18,7 +18,7 @@ const EXPERIENCES: Experience[] = [
     company: 'Gmango AI',
     period: '2023 – Present',
     description:
-      'Founding Engineer at a tech startup at the intersection of AI and healthcare. Built the full mobile frontend in Flutter — including checkout, user management, and marketplace — and working on AI-powered analysis of image scans.',
+      'Founding Engineer at a tech startup at the intersection of AI and healthcare. Built the full mobile frontend in Flutter — including checkout, user management, and marketplace. Worked on backend streaming services and researching ML models for medical diagnosis.',
     image: 'Gmango_logo.png',
     tags: ['AI/ML', 'Dart', 'Flutter', 'Backend', 'Mobile', 'Startup', 'Python', 'REST API'],
     color: '#7eb8d4',
