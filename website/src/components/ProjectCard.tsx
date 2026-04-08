@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Modal } from '@mantine/core';
 import styles from './ProjectCard.module.css';
@@ -26,6 +26,53 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const [opened, setOpened] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const tagsContainerRef = useRef<HTMLDivElement>(null);
+  const measureRowRef = useRef<HTMLDivElement>(null);
+  const moreMeasureRef = useRef<HTMLSpanElement>(null);
+  const [visibleSkillCount, setVisibleSkillCount] = useState(skills.length);
+
+  useLayoutEffect(() => {
+    const container = tagsContainerRef.current;
+    const measureRow = measureRowRef.current;
+    const moreEl = moreMeasureRef.current;
+    if (!container || !measureRow || !moreEl || skills.length === 0) {
+      setVisibleSkillCount(skills.length);
+      return;
+    }
+
+    const compute = () => {
+      const available = container.clientWidth;
+      if (available <= 0) return;
+
+      const chips = measureRow.querySelectorAll<HTMLElement>('[data-skill-chip]');
+      const widths = Array.from(chips).map((c) => c.offsetWidth);
+      const moreW = moreEl.offsetWidth;
+      const gap = (() => {
+        const g = getComputedStyle(container).columnGap || getComputedStyle(container).gap;
+        const n = parseFloat(g);
+        return Number.isFinite(n) ? n : 6;
+      })();
+
+      let sum = 0;
+      let n = 0;
+      for (let i = 0; i < skills.length; i++) {
+        const chipW = widths[i] ?? 0;
+        const nextSum = sum + (n > 0 ? gap : 0) + chipW;
+        const remainingAfter = skills.length - i - 1;
+        const trailer = remainingAfter > 0 ? moreW + gap : 0;
+        if (nextSum + trailer > available) break;
+        sum = nextSum;
+        n++;
+      }
+
+      setVisibleSkillCount(n);
+    };
+
+    const ro = new ResizeObserver(() => compute());
+    ro.observe(container);
+    compute();
+    return () => ro.disconnect();
+  }, [skills]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
@@ -85,10 +132,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
           {/* Glass card body */}
           <div className={styles.cardBody}>
+            <div ref={measureRowRef} className={styles.tagsMeasure} aria-hidden>
+              {skills.map((skill, i) => (
+                <span
+                  key={i}
+                  data-skill-chip
+                  className={styles.tag}
+                  style={{ '--tag-color': SKILL_COLORS[i % SKILL_COLORS.length] } as React.CSSProperties}
+                >
+                  {skill}
+                </span>
+              ))}
+              <span ref={moreMeasureRef} className={styles.tagMore}>
+                + more
+              </span>
+            </div>
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{description}</p>
-            <div className={styles.tags}>
-              {skills.slice(0, 3).map((skill, i) => (
+            <div ref={tagsContainerRef} className={styles.tags}>
+              {skills.slice(0, visibleSkillCount).map((skill, i) => (
                 <span
                   key={i}
                   className={styles.tag}
@@ -97,9 +159,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   {skill}
                 </span>
               ))}
-              {skills.length > 3 && (
-                <span className={styles.tagMore}>+{skills.length - 3}</span>
-              )}
+              {visibleSkillCount < skills.length ? (
+                <span className={styles.tagMore}>+ more</span>
+              ) : null}
             </div>
           </div>
         </div>

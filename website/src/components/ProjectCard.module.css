@@ -52,12 +52,13 @@
   opacity: 1;
 }
 
-/* ---- Image zone — ~70% of card height ---- */
+/* ---- Image zone — capped so tall grid rows don’t inflate artwork ---- */
 .imageContainer {
   position: relative;
   width: 100%;
-  flex: 0 0 68%;
-  min-height: 200px;
+  flex: 0 0 auto;
+  min-height: 140px;
+  max-height: 240px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -80,7 +81,7 @@
   position: relative;
   z-index: 2;
   max-width: 100%;
-  max-height: 200px;
+  max-height: min(200px, 28vh);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -135,6 +136,7 @@
   flex-direction: column;
   gap: 0.4rem;
   border-top: none;
+  min-width: 0;
 }
 
 
@@ -154,15 +156,33 @@
   flex: 1;
 }
 
-/* ---- Tags ---- */
+/* Hidden row: same chip styles as .tags for width measurement */
+.tagsMeasure {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.4rem;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ---- Tags (card preview — single line; see measurement in ProjectCard.tsx) ---- */
 .tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: 0.4rem;
   margin-top: 0.4rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .tag {
+  flex-shrink: 0;
   font-size: 0.68rem;
   font-weight: 600;
   padding: 3px 9px;
@@ -175,6 +195,7 @@
 }
 
 .tagMore {
+  flex-shrink: 0;
   font-size: 0.68rem;
   font-weight: 600;
   padding: 3px 9px;
