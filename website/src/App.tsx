@@ -131,6 +131,26 @@ const PROJECTS: {
       </>
     ),
   },
+  {
+    img: 'Google_Co_Lab.png',
+    title: 'Autonomous Drone',
+    description: 'Reinforcement learning for autonomous flight',
+    gradient: ['#0d1a22', '#160d28'],
+    skills: ['TensorBoard', 'RL', 'PyTorch'],
+    fullDescription:
+      'Trained and evaluated reinforcement learning policies for autonomous drone control with PyTorch. Used TensorBoard for experiment tracking, comparing reward curves, and debugging policy behavior across training runs.',
+    imageCredit: <>None</>,
+  },
+  {
+    img: 'Gmango_logo.png',
+    title: 'Medical RAG',
+    description: 'Retrieval-augmented generation for clinical knowledge',
+    gradient: ['#0d1520', '#1a0d18'],
+    skills: ['VectorDB', 'RAG', 'Embeddings'],
+    fullDescription:
+      'Built a retrieval-augmented generation pipeline over medical documents using embedding models and a vector database. Focused on grounding answers in source material and improving relevance for domain-specific clinical queries.',
+    imageCredit: <>None</>,
+  },
 ];
 
 const App: React.FC = () => {
