@@ -14,7 +14,7 @@ interface Experience {
 
 const EXPERIENCES: Experience[] = [
   {
-    role: 'SWE & ML Engineer',
+    role: 'Founding Engineer',
     company: 'Gmango AI',
     period: '2023 – Present',
     description:
