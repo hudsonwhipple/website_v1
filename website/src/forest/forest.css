@@ -1,0 +1,103 @@
+/* Forest theme — global resets, keyframes, base font, responsive overrides. */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: #04100a;
+  color: #f0fdf4;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+}
+* { box-sizing: border-box; }
+
+@keyframes gb-float-0 { from { transform: translate(0,0) scale(1); } to { transform: translate(40px, -30px) scale(1.1); } }
+@keyframes gb-float-1 { from { transform: translate(0,0) scale(1.1); } to { transform: translate(-50px, 40px) scale(0.95); } }
+@keyframes gb-float-2 { from { transform: translate(0,0) scale(0.95); } to { transform: translate(30px, 50px) scale(1.15); } }
+@keyframes gb-float-3 { from { transform: translate(0,0) scale(1.05); } to { transform: translate(-30px, -40px) scale(1); } }
+@keyframes drift-up { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pulse-glow { 0%,100% { opacity: .35; } 50% { opacity: .8; } }
+
+input::placeholder, textarea::placeholder {
+  color: rgba(240,253,244,0.32);
+}
+
+/* Cap the content width on very large screens so layout doesn't sprawl. */
+.forest-page {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ─── XL desktop (≥ 1440px) — gentle scale-up, more breathing room ─── */
+@media (min-width: 1440px) {
+  .forest-nav { padding: 28px 72px !important; }
+  .forest-hero { padding: 96px 72px 104px !important; }
+  .forest-hero-title { font-size: 140px !important; }
+  .forest-hero-sub { font-size: 42px !important; }
+  .forest-signature { margin: 0 72px 88px !important; }
+  .forest-section { padding: 72px !important; }
+  .forest-section-title { font-size: 88px !important; }
+  .forest-footer { padding: 44px 72px !important; }
+}
+
+/* ─── Standard desktop (1025–1439px) — defaults set inline (no override) ─── */
+
+/* ─── Tablet (≤ 1024px) ─── */
+@media (max-width: 1024px) {
+  .forest-nav { padding: 18px 28px !important; }
+  .forest-hero { padding: 56px 28px 64px !important; }
+  .forest-hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .forest-hero-title { font-size: 88px !important; }
+  .forest-hero-sub { font-size: 28px !important; }
+  .forest-portrait { max-width: 360px !important; margin: 0 auto; }
+  .forest-signature { margin: 0 28px 56px !important; grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+  .forest-signature-cell { border-left: none !important; padding-left: 0 !important; }
+
+  .forest-section { padding: 40px 28px !important; }
+  .forest-section-title { font-size: 60px !important; }
+  .forest-projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .forest-contact-grid { grid-template-columns: 1fr !important; }
+  .forest-deck-wrap { flex-direction: column !important; align-items: stretch; }
+  .forest-deck-stack { flex: 0 0 auto !important; width: 100% !important; min-height: 560px !important; }
+  .forest-deck-roles { flex: 0 0 auto !important; width: 100% !important; }
+  .forest-honeycomb-header { flex-direction: column !important; align-items: flex-start !important; }
+  .forest-honeycomb-readout { width: 100% !important; }
+  .forest-footer { padding: 28px 28px !important; }
+}
+
+/* ─── Small tablet / large phone (≤ 768px) ─── */
+@media (max-width: 768px) {
+  .forest-hero-title { font-size: 72px !important; }
+  .forest-hero-sub { font-size: 24px !important; }
+  .forest-section-title { font-size: 52px !important; }
+  .forest-projects-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+  /* honeycomb scales via JS measurement */
+}
+
+/* ─── Mobile (≤ 640px) ─── */
+@media (max-width: 640px) {
+  .forest-nav { padding: 14px 18px !important; gap: 10px !important; }
+  .forest-nav-links { width: 100%; justify-content: center; gap: 18px !important; }
+  .forest-hero { padding: 40px 18px 48px !important; }
+  .forest-hero-grid { gap: 28px !important; }
+  .forest-hero-title { font-size: 60px !important; }
+  .forest-hero-sub { font-size: 22px !important; }
+  .forest-portrait { max-width: 300px !important; }
+  .forest-signature { margin: 0 18px 40px !important; padding: 18px 20px !important; grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+
+  .forest-section { padding: 32px 18px !important; }
+  .forest-section-title { font-size: 44px !important; }
+  .forest-projects-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  /* honeycomb scales via JS measurement */
+  .forest-deck-stack { min-height: 480px !important; }
+  .forest-footer { padding: 22px 18px !important; flex-direction: column !important; align-items: flex-start !important; }
+}
+
+/* ─── Small mobile (≤ 400px) ─── */
+@media (max-width: 400px) {
+  .forest-hero-title { font-size: 48px !important; }
+  .forest-hero-sub { font-size: 19px !important; }
+  .forest-section-title { font-size: 36px !important; }
+  .forest-portrait { max-width: 240px !important; }
+  .forest-signature { grid-template-columns: 1fr !important; }
+  /* honeycomb scales via JS measurement */
+}
