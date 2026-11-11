@@ -1,48 +1,31 @@
 import React from 'react';
 import './forest/forest.css';
 
-import { FOREST } from './forest/theme';
 import { ThemeBackdrop } from './forest/ThemeBackdrop';
-import { Nav, Hero, SignatureStrip, Footer } from './forest/Hero';
-import { TechHoneycomb } from './forest/TechHoneycomb';
-import { ExpDeck } from './forest/ExpDeck';
+import { Nav } from './forest/Nav';
+import { Hero } from './forest/Hero';
 import { ProjectsSection } from './forest/ProjectsSection';
-import { ContactSection } from './forest/ContactSection';
-
-const T = FOREST;
+import { ExperienceSection } from './forest/ExperienceSection';
+import { SkillsSection } from './forest/SkillsSection';
+import { ContactSection, Footer } from './forest/ContactSection';
 
 const App: React.FC = () => {
   return (
-    <div
-      style={{
-        position: 'relative',
-        width: '100%',
-        minHeight: '100vh',
-        background: T.bg.ink,
-        color: T.text.primary,
-        fontFamily: 'Inter, sans-serif',
-        overflow: 'hidden',
-      }}
-    >
-      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
-        <ThemeBackdrop theme={T} density={1.6} />
-      </div>
-
+    <div className="site">
+      <a href="#main" className="skip">
+        Skip to content
+      </a>
+      <ThemeBackdrop />
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <Nav theme={T} />
-      </div>
-
-      <div className="forest-page" style={{ position: 'relative', zIndex: 1 }}>
-        <Hero theme={T} />
-        <SignatureStrip theme={T} />
-        <TechHoneycomb theme={T} padding={56} />
-        <div style={{ height: 32 }} />
-        <ExpDeck theme={T} padding={56} />
-        <div style={{ height: 32 }} />
-        <ProjectsSection theme={T} padding={56} />
-        <div style={{ height: 32 }} />
-        <ContactSection theme={T} padding={56} />
-        <Footer theme={T} />
+        <Nav />
+        <main id="main">
+          <Hero />
+          <ProjectsSection />
+          <ExperienceSection />
+          <SkillsSection />
+          <ContactSection />
+        </main>
+        <Footer />
       </div>
     </div>
   );
