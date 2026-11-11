@@ -88,20 +88,6 @@ function Portrait() {
           Austin, TX
         </div>
       </div>
-      <div className="portrait-chip">
-        <span>
-          <span className="dot" />
-          <span>
-            ML at <b>Gmango AI</b>
-          </span>
-        </span>
-        <span>
-          <span className="dot" style={{ '--c': 'var(--amber)' } as React.CSSProperties} />
-          <span>
-            MS CS at <b>UT Austin</b>
-          </span>
-        </span>
-      </div>
     </div>
   );
 }
