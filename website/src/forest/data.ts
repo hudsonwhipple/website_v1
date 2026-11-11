@@ -100,6 +100,20 @@ export type Experience = {
   period: string;
   location: string;
   blurb: string;
+  /**
+   * Where the bar sits on the timeline, as 'YYYY-MM' (end is exclusive; null
+   * means still going). Where `period` only names years, the bar starts in
+   * January, so tighten these if you want month accuracy.
+   */
+  span: [string, string | null];
+  /**
+   * Splits the bar into stages (intern, part-time, full-time). Each stage is
+   * drawn in its own style and listed in the detail panel.
+   */
+  phases?: { kind: 'intern' | 'part' | 'full'; label: string; when: string; span: [string, string | null] }[];
+  /** CSS colour for this role's bar and detail panel. */
+  accent: string;
+  highlights?: { value: string; label: string }[];
   /** Skill names (from SKILL_GROUPS) used in this role. */
   skills?: string[];
 };
@@ -109,10 +123,23 @@ export const EXPERIENCES: Experience[] = [
     id: 'gmango',
     company: 'Gmango AI',
     role: 'Research & ML Engineer',
-    period: '2023 – present',
+    period: '2024 – present',
     location: 'Remote',
     blurb:
       'LLM systems for healthcare: a voice agent, an evaluation platform, and the Java services behind the patient health profile. Started on the Flutter patient app.',
+    span: ['2024-06', null],
+    phases: [
+      { kind: 'intern', label: 'Intern', when: 'Summer 2024', span: ['2024-06', '2024-09'] },
+      { kind: 'part', label: 'Part-time', when: 'Spring 2025', span: ['2025-01', '2025-06'] },
+      { kind: 'part', label: 'Part-time', when: 'Fall 2025', span: ['2025-09', '2025-12'] },
+      { kind: 'full', label: 'Full-time', when: 'Dec 2025 – present', span: ['2025-12', null] },
+    ],
+    accent: 'var(--accent)',
+    highlights: [
+      { value: '3,000+', label: 'voice agent users' },
+      { value: '9 × 6', label: 'benchmarks × model backends' },
+      { value: '0.811 F1', label: 'best of 9 extraction methods' },
+    ],
     skills: ['Flutter', 'Dart', 'Java', 'Spring Boot', 'AWS', 'Python', 'FastAPI', 'scikit-learn', 'Docker'],
   },
   {
@@ -123,17 +150,14 @@ export const EXPERIENCES: Experience[] = [
     location: 'Fort Worth, TX',
     blurb:
       'Improved the live crew-connection delay model for 7 hubs and doubled the speed of the Databricks job that feeds it.',
+    span: ['2025-06', '2025-09'],
+    accent: 'var(--amber)',
+    highlights: [
+      { value: '5.5 → 3.6 min', label: 'mean absolute error' },
+      { value: '~100', label: 'flight delays saved a month' },
+      { value: '2×', label: 'faster Databricks job' },
+    ],
     skills: ['Python', 'SQL', 'Databricks', 'CatBoost'],
-  },
-  {
-    id: 'ut-ca',
-    company: 'Curricular Analytics, UT Austin',
-    role: 'Data Analyst / Software Engineer',
-    period: '2024 – 2026',
-    location: 'Austin, TX',
-    blurb:
-      'Led developers on a web app that checks degree plans against live course data to find bottlenecks. Demoed it to 60+ faculty administrators.',
-    skills: ['React', 'Python', 'PostgreSQL'],
   },
   {
     id: 'ut-code',
@@ -143,13 +167,22 @@ export const EXPERIENCES: Experience[] = [
     location: 'Austin, TX',
     blurb:
       'Wrote unit tests, including multi-threaded cases, and user-management API endpoints for an AI auto-grader.',
+    span: ['2023-01', '2024-01'],
+    accent: 'var(--sky)',
     skills: ['Python', 'PostgreSQL'],
   },
 ];
 
-export const EDUCATION = [
-  { degree: 'MS Computer Science', school: 'UT Austin', period: '2026 – 2028' },
-  { degree: 'BS Computer Science', school: 'UT Austin', period: '2025' },
+/** `span` as in Experience; a null start means it began before the timeline does. */
+export const EDUCATION: {
+  degree: string;
+  short: string;
+  school: string;
+  period: string;
+  span: [string | null, string | null];
+}[] = [
+  { degree: 'BS Computer Science', short: 'BS', school: 'UT Austin', period: '2025', span: [null, '2026-01'] },
+  { degree: 'MS Computer Science', short: 'MS', school: 'UT Austin', period: '2026 – 2028', span: ['2026-08', '2028-06'] },
 ];
 
 export const SKILL_GROUPS: { id: string; title: string; accent: string; skills: string[] }[] = [

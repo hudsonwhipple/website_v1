@@ -30,6 +30,17 @@ test('picking a skill shows where it was used', () => {
   expect(screen.getByText(/in Autonomous drone racing/)).toBeInTheDocument();
 });
 
+test('picking a role on the timeline shows its details', () => {
+  render(<App />);
+  const row = screen.getByRole('button', { name: /American Airlines/ });
+  expect(row).toHaveAttribute('aria-pressed', 'false');
+  fireEvent.click(row);
+  expect(row).toHaveAttribute('aria-pressed', 'true');
+  const detail = screen.getByRole('heading', { level: 3, name: 'Data Scientist Intern' }).closest('article');
+  expect(detail).toHaveClass('is-active');
+  expect(within(detail).getByText('5.5 → 3.6 min')).toBeInTheDocument();
+});
+
 test('shows the GitHub heat map with the year total', () => {
   render(<App />);
   const total = CONTRIBUTIONS.counts.reduce((a, b) => a + b, 0);
