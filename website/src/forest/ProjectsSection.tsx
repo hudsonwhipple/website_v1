@@ -1,6 +1,7 @@
 import React from 'react';
 import { PROJECTS, Project } from './data';
 import { Reveal } from './animations';
+import { ProjectVisual } from './ProjectVisual';
 
 export function ProjectsSection() {
   return (
@@ -55,6 +56,7 @@ function ProjectRow({ project: p }: { project: Project }) {
         </ul>
       </div>
       <div className="proj-side">
+        <ProjectVisual id={p.id} />
         <div className="proj-metric">{p.metric.value}</div>
         <div className="proj-metric-label">{p.metric.label}</div>
       </div>
