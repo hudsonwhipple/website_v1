@@ -1,0 +1,298 @@
+/* Chrome for ContributionSkyline. The canvas reads its colours from this
+   element's computed `color` and `background-color`, so theme it here. */
+.sky {
+  --sky-bg: #0a1811;
+  --sky-fg: #edf4ee;
+  --sky-border: rgba(237, 244, 238, 0.11);
+  --sky-muted: rgba(237, 244, 238, 0.52);
+  --sky-number: inherit;
+
+  position: relative;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--sky-border);
+  border-radius: 14px;
+  background: var(--sky-bg);
+  color: var(--sky-fg);
+}
+.sky button {
+  font: inherit;
+  cursor: pointer;
+}
+.sky :focus-visible {
+  outline: 2px solid var(--sky-fg);
+  outline-offset: 2px;
+}
+
+.sky-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+}
+.sky-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.sky-title b {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.sky-toggle {
+  position: relative;
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--sky-border);
+  border-radius: 7px;
+}
+.sky-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: 32px;
+  border-radius: 5px;
+  background: var(--sky-fg);
+  transition: transform 0.5s;
+}
+.sky-toggle-btn {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--sky-muted);
+  transition: color 0.5s;
+}
+.sky-toggle-btn.is-on {
+  color: var(--sky-bg);
+}
+
+.sky-frame {
+  position: relative;
+  border: 1px solid var(--sky-border);
+  border-radius: 10px;
+}
+.sky-pad {
+  position: relative;
+  padding: 14px 14px 0;
+}
+.sky-stage {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.sky-stage:has(:focus-visible) {
+  outline: 2px solid var(--sky-fg);
+  outline-offset: 4px;
+}
+.sky-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  outline: none;
+}
+
+/* Stats */
+.sky-stat-label {
+  font-size: 13px;
+  line-height: 1.25;
+  color: var(--sky-muted);
+}
+.sky-stat-value {
+  font-family: var(--sky-number);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.5s;
+}
+.sky-right {
+  text-align: right;
+}
+.sky-span2 {
+  grid-column: span 2;
+}
+.sky-stat {
+  min-width: 0;
+}
+.sky-stat-line {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 4px;
+}
+.sky-stat-unit {
+  font-size: 14px;
+}
+.sky-stat-sub {
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--sky-muted);
+}
+.sky-cstat {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: end;
+  column-gap: 8px;
+}
+.sky-cstat-text {
+  padding-bottom: 0.15em;
+  line-height: 1.25;
+}
+.sky-cstat-unit {
+  font-size: 15px;
+}
+.sky-cstat-sub {
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--sky-muted);
+}
+.sky-corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  pointer-events: none;
+  transition-property: opacity, transform;
+}
+.sky-corner-tr {
+  top: 4px;
+  right: 4px;
+  align-items: flex-end;
+}
+.sky-corner-bl {
+  bottom: 4px;
+  left: 4px;
+  align-items: flex-start;
+}
+.sky-row {
+  display: grid;
+  transition-property: grid-template-rows, opacity;
+}
+.sky-row-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+.sky-row-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 16px 14px 4px;
+}
+
+/* Tooltip. Its top/left match .sky-pad's padding so it tracks the canvas. */
+.sky-tip {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 20;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--sky-fg);
+  color: var(--sky-bg);
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+.sky-tip strong {
+  font-weight: 600;
+}
+.sky-tip-date {
+  opacity: 0.75;
+}
+.sky-tip-arrow {
+  position: absolute;
+  top: 100%;
+  left: var(--arrow, 50%);
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--sky-fg);
+}
+
+/* Footer */
+.sky-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--sky-muted);
+}
+.sky-hints {
+  position: relative;
+  display: grid;
+  flex: 1;
+}
+.sky-hint {
+  grid-area: 1 / 1;
+  transition: opacity 0.5s;
+}
+.sky-foot-text {
+  flex: 1;
+}
+.sky-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sky-swatch {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 1px rgba(127, 127, 127, 0.12);
+  transition: background-color 0.5s, transform 0.5s;
+}
+.sky-swatch:hover {
+  transform: scale(1.25);
+}
+
+.sky-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .sky-row-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky *,
+  .sky *::before {
+    transition: none !important;
+  }
+}
