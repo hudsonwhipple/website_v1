@@ -30,6 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "CI=true react-scripts test --watchAll=false --watchman=false",
+    "contributions": "node scripts/fetch-contributions.mjs",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
