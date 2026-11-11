@@ -709,6 +709,23 @@ button.skill:hover {
   opacity: 0.45;
 }
 
+/* ─── GitHub activity ─── */
+.section-link {
+  margin-bottom: 6px;
+}
+.sky.activity-sky {
+  --sky-bg: rgb(9, 22, 15);
+  --sky-fg: var(--text);
+  --sky-border: var(--line);
+  --sky-muted: var(--text-3);
+  --sky-number: var(--serif);
+  font-family: var(--sans);
+}
+.sky.activity-sky .sky-stat-value {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
 /* ─── Contact ─── */
 .contact {
   padding-bottom: 96px;

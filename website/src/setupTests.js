@@ -16,6 +16,9 @@ class MockIntersectionObserver {
 }
 global.IntersectionObserver = MockIntersectionObserver;
 
+// jsdom has no canvas; the heat map skips drawing when it gets no context.
+HTMLCanvasElement.prototype.getContext = () => null;
+
 global.ResizeObserver = class ResizeObserver {
   constructor(cb) {
     this.cb = cb;

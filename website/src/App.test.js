@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import App from './App';
 import { PROJECTS, SKILL_GROUPS, SKILL_USES } from './forest/data';
+import { CONTRIBUTIONS } from './forest/contributions';
 
 test('renders site branding', () => {
   render(<App />);
@@ -27,6 +28,14 @@ test('picking a skill shows where it was used', () => {
   render(<App />);
   fireEvent.click(screen.getByRole('button', { name: 'PyTorch' }));
   expect(screen.getByText(/in Autonomous drone racing/)).toBeInTheDocument();
+});
+
+test('shows the GitHub heat map with the year total', () => {
+  render(<App />);
+  const total = CONTRIBUTIONS.counts.reduce((a, b) => a + b, 0);
+  const heading = screen.getByRole('heading', { level: 3, name: /in the last year/ });
+  expect(heading).toHaveTextContent(new Intl.NumberFormat('en-US').format(total));
+  expect(screen.getByRole('img', { name: /Use the arrow keys/ })).toBeInTheDocument();
 });
 
 test('every skill mapped to a project or role exists in the skills list', () => {

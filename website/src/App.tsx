@@ -7,6 +7,7 @@ import { Hero } from './forest/Hero';
 import { ProjectsSection } from './forest/ProjectsSection';
 import { ExperienceSection } from './forest/ExperienceSection';
 import { SkillsSection } from './forest/SkillsSection';
+import { ActivitySection } from './forest/ActivitySection';
 import { ContactSection, Footer } from './forest/ContactSection';
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <ProjectsSection />
           <ExperienceSection />
           <SkillsSection />
+          <ActivitySection />
           <ContactSection />
         </main>
         <Footer />
