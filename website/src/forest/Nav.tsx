@@ -39,9 +39,7 @@ export function Nav() {
     <header className={`nav${scrolled ? ' is-scrolled' : ''}`}>
       <div className="wrap nav-inner">
         <a href="#top" className="nav-name" aria-label="Hudson Whipple, back to top">
-          <span className="nav-logo" aria-hidden="true">
-            h
-          </span>
+          <img className="nav-logo" src="/favicon.svg" width="30" height="30" alt="" />
           <span className="nav-name-text">Hudson Whipple</span>
         </a>
         <nav className="nav-links" aria-label="Sections">

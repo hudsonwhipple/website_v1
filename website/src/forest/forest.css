@@ -161,20 +161,13 @@ body {
   gap: 12px;
   white-space: nowrap;
 }
+/* The favicon file itself, so the two can never drift apart. */
 .nav-logo {
+  flex: none;
+  display: block;
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  background: linear-gradient(135deg, #a3e635, #fbbf24);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1;
-  color: #04100a;
   box-shadow: 0 0 16px rgba(163, 230, 53, 0.4);
   transition: transform 0.3s var(--ease);
 }
